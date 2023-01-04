@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo con Freddy</title>
+    <script>
+        let jugador = 0
+        let pc = 2
+
+        jugador = prompt("Elige: 1 piedra, 2 papel, 3 tijera.")
+
+        if(jugador == 1){
+            alert("Elegiste: 🥌")
+        } else if(jugador == 2){
+            alert("Elegiste: 🧻")
+        } else if(jugador == 3){
+            alert("Elegiste: ✂")
+        } else {
+            alert("Elegiste el camino de la cobardia.")
+        }
+
+        if(pc == 1){
+            alert("El PC elige: 🥌")
+        } else if(pc == 2){
+            alert("El PC elige: 🧻")
+        } else if(pc == 3){
+            alert("El PC elige: ✂")
+        }
+
+        if(pc == jugador){
+            alert("EMPATADOS! 🦆")
+        } else if(jugador == 1 && pc == 3){
+            alert("GANASTE 🥳")
+        } else if(jugador == 2 && pc == 1){
+            alert("GANASTE 🥳")
+        } else if(jugador == 3 && pc == 2){
+            alert("GANASTE 🥳")
+        } else {
+            alert("PERDISTE ❌")
+        }
+    </script>
+</head>
+<body>
+    <h1>pagina</h1>
+    hola<strong>mi primera web</strong>
+</body>
+</html>
