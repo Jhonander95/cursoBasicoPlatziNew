@@ -123,6 +123,16 @@ function crearMensaje(resultadoCombate){
     seccionMensajes.appendChild(parrafo)
 }
 
+/* function verificarVidas(){
+    if(vidasJugador == 0){
+        alert("GAME OVER--PERDEDOR❌")
+        window.location.reload()
+    } else if(vidasEnemigo == 0){
+        alert("GANASTE🎉🎇🎉")
+        window.location.reload()
+    }
+} */
+
 function combate(){
 
     let spanVidasJugador = document.getElementById('vidas-jugador')
@@ -147,6 +157,7 @@ function combate(){
         vidasJugador--
         spanVidasJugador.innerHTML = vidasJugador
     }
+ //   verificarVidas()
 }
 
 /* function vidaPerdidaEnemigo(){
