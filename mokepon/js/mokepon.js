@@ -17,11 +17,16 @@ let resultadoCombate = ""
 let vidasJugador = 3
 let vidasEnemigo = 3
 
+let seccionSeleccionarMascota
+let seccionSeleccionarAtaque
+
 /* -------------------Fin--Variables----------------------------- */
 
 /* --------------------Funciones---------------------- */
 function iniciarJuego(){
-    
+    seccionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
+    seccionSeleccionarAtaque.style.display = 'none'
+
     seccionMensajes = document.getElementById('mensajes')
     inputHipodoge = document.getElementById('hipodoge')
     inputCapipepo = document.getElementById('capipepo')
@@ -50,25 +55,42 @@ function iniciarJuego(){
 }
 
 function selecionarMascotaJugador(){
-
+    
     let mascotaJugador = document.getElementById('mascota-jugador')
 
     if(inputHipodoge.checked){
         mascotaJugador.innerHTML = ' Hipodoge'
+        seccionSeleccionarAtaque.style.display = 'block'
+        seccionSeleccionarMascota = document.getElementById('seleccionar-mascota')
+        seccionSeleccionarMascota.style.display = 'none'
     } else if(inputCapipepo.checked){
         mascotaJugador.innerHTML = ' Capipepo'
+        seccionSeleccionarAtaque.style.display = 'block'
+        seccionSeleccionarMascota = document.getElementById('seleccionar-mascota')
+        seccionSeleccionarMascota.style.display = 'none'
     } else if(inputRatigueya.checked){
         mascotaJugador.innerHTML = ' Ratigueya'
+        seccionSeleccionarAtaque.style.display = 'block'
+        seccionSeleccionarMascota = document.getElementById('seleccionar-mascota')
+        seccionSeleccionarMascota.style.display = 'none'
     } else if(inputLangostelvis.checked){
         mascotaJugador.innerHTML = ' Langostelvis'
+        seccionSeleccionarAtaque.style.display = 'block'
+        seccionSeleccionarMascota = document.getElementById('seleccionar-mascota')
+        seccionSeleccionarMascota.style.display = 'none'
     } else if(inputTucapalma.checked){
         mascotaJugador.innerHTML = ' Tucapalma'
+        seccionSeleccionarAtaque.style.display = 'block'
+        seccionSeleccionarMascota = document.getElementById('seleccionar-mascota')
+        seccionSeleccionarMascota.style.display = 'none'
     } else if(inputPydos.checked){
         mascotaJugador.innerHTML = ' Pydos'
+        seccionSeleccionarAtaque.style.display = 'block'
+        seccionSeleccionarMascota = document.getElementById('seleccionar-mascota')
+        seccionSeleccionarMascota.style.display = 'none'
     } else {
         alert("Debe seleccionar una masota ")
     }
-
     selecionarMascotaEnemigo()
 }
 
