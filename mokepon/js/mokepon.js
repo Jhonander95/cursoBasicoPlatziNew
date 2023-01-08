@@ -1,19 +1,18 @@
 /* ---------------------Variables----------------------------- */
-let btnMascotaJugador = document.getElementById('btn-mascota')
-let btnAtaqueFuego = document.getElementById('btn-fuego')
-let btnAtaqueAgua = document.getElementById('btn-agua')
-let btnAtaqueTierra = document.getElementById('btn-tierra')
-let seccionMensajes = document.getElementById('mensajes')
-
-let inputHipodoge = document.getElementById('hipodoge')
-let inputCapipepo = document.getElementById('capipepo')
-let inputRatigueya = document.getElementById('ratigueya')
-let inputLangostelvis = document.getElementById('langostelvis')
-let inputTucapalma = document.getElementById('tucapalma')
-let inputPydos = document.getElementById('pydos')
+let seccionMensajes
+let inputHipodoge
+let inputCapipepo 
+let inputRatigueya 
+let inputLangostelvis
+let inputTucapalma 
+let inputPydos 
 
 let ataqueJugador 
 let ataqueEnemigo 
+let btnAtaqueAgua
+let btnAtaqueFuego
+let btnAtaqueTierra
+let btnReiniciar
 let resultadoCombate = ""
 let vidasJugador = 3
 let vidasEnemigo = 3
@@ -21,6 +20,35 @@ let vidasEnemigo = 3
 /* -------------------Fin--Variables----------------------------- */
 
 /* --------------------Funciones---------------------- */
+function iniciarJuego(){
+    
+    seccionMensajes = document.getElementById('mensajes')
+    inputHipodoge = document.getElementById('hipodoge')
+    inputCapipepo = document.getElementById('capipepo')
+    inputRatigueya = document.getElementById('ratigueya')
+    inputLangostelvis = document.getElementById('langostelvis')
+    inputTucapalma = document.getElementById('tucapalma')
+    inputPydos = document.getElementById('pydos')
+    
+    seccionReiniciar = document.getElementById('reiniciar')
+    seccionReiniciar.style.display = 'none'
+
+    btnMascotaJugador = document.getElementById('btn-mascota')
+    btnMascotaJugador.addEventListener('click', selecionarMascotaJugador)
+
+    btnAtaqueFuego = document.getElementById('btn-fuego')
+    btnAtaqueFuego.addEventListener('click', ataqueFuego) 
+
+    btnAtaqueAgua = document.getElementById('btn-agua')
+    btnAtaqueAgua.addEventListener('click', ataqueAgua)
+
+    btnAtaqueTierra = document.getElementById('btn-tierra')
+    btnAtaqueTierra.addEventListener('click', ataqueTierra)
+
+    btnReiniciar = document.getElementById('btn-reiniciar')
+    btnReiniciar.addEventListener('click', reiniciar)
+}
+
 function selecionarMascotaJugador(){
 
     let mascotaJugador = document.getElementById('mascota-jugador')
@@ -123,6 +151,26 @@ function crearMensaje(resultadoCombate){
     seccionMensajes.appendChild(parrafo)
 }
 
+
+function crearMensajeFinal(resultado){
+    let parrafo = document.createElement('p')
+    parrafo.innerHTML = resultado
+    seccionMensajes.appendChild(parrafo)
+}
+
+function verificarVidas(){
+    if(vidasEnemigo == 0){
+        crearMensajeFinal('FELICITACIONES, GANASTE!🎉🎉')
+        deshabilitarBotonesAtaque()
+
+    } else if(vidasJugador == 0){
+        crearMensajeFinal('LO SIENTO😥, PERDISTE!😭😭')
+        deshabilitarBotonesAtaque()
+      
+    }
+    mostrarReiniciar()   
+}
+
 /* function verificarVidas(){
     if(vidasJugador == 0){
         alert("GAME OVER--PERDEDOR❌")
@@ -139,16 +187,16 @@ function combate(){
     let spanVidasEnemigo = document.getElementById('vidas-enemigo')
     
     if(ataqueJugador == ataqueEnemigo){
-        crearMensaje("🥳🎉 EMPATADOS 🦆🦆")
-    } else if(ataqueJugador == "Fuego" && ataqueEnemigo == "Tierra"){
+        crearMensaje("🦆🦆 EMPATADOS 🦆🦆")
+    } else if(ataqueJugador == "Fuego🔥" && ataqueEnemigo == "Tierra🌱"){
         crearMensaje("🥳🎉 GANASTE 🥳🎉")
         vidasEnemigo--
         spanVidasEnemigo.innerHTML = vidasEnemigo
-    } else if(ataqueJugador == "Agua" && ataqueEnemigo == "Fuego"){
+    } else if(ataqueJugador == "Agua💦" && ataqueEnemigo == "Fuego🔥"){
         crearMensaje("🥳🎉 GANASTE 🥳🎉")
         vidasEnemigo--
         spanVidasEnemigo.innerHTML = vidasEnemigo
-    } else if(ataqueJugador == "Tierra" && ataqueEnemigo == "Agua"){
+    } else if(ataqueJugador == "Tierra🌱" && ataqueEnemigo == "Agua💦"){
         crearMensaje("🥳🎉 GANASTE 🥳🎉")
         vidasEnemigo--
         spanVidasEnemigo.innerHTML = vidasEnemigo
@@ -157,8 +205,26 @@ function combate(){
         vidasJugador--
         spanVidasJugador.innerHTML = vidasJugador
     }
- //   verificarVidas()
+    verificarVidas()
 }
+
+function mostrarReiniciar(){
+    if(vidasEnemigo == 0 || vidasJugador == 0){
+        seccionReiniciar.style.display = 'block'
+    }
+}
+
+function reiniciar(){
+    location.reload()
+}
+
+function deshabilitarBotonesAtaque(){
+    btnAtaqueAgua.setAttribute('disabled', 'disabled')
+    btnAtaqueFuego.setAttribute('disabled', 'disabled')
+    btnAtaqueTierra.setAttribute('disabled', 'disabled')
+    
+}
+
 
 /* function vidaPerdidaEnemigo(){
     let vidasEnemigo = document.getElementById('vidas-enemigo')
@@ -171,12 +237,10 @@ function vidaPerdidaJugador(){
     return vidasJugador.innerHTML = vidasJugador
 } */
 /* --------------fin funciones-------------- */
-btnMascotaJugador.addEventListener('click', selecionarMascotaJugador)
+window.addEventListener('load',iniciarJuego)
 
 
-btnAtaqueFuego.addEventListener('click', ataqueFuego)                           
-btnAtaqueAgua.addEventListener('click', ataqueAgua)
-btnAtaqueTierra.addEventListener('click', ataqueTierra)
+
 
 
 
