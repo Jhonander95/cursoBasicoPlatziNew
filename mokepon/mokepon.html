@@ -5,28 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOKEPON</title>
+    
     <script src="./js/mokepon.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>MOKEPON 🔥💦🌱 </h1>
     <section id="seleccionar-mascota">
         <h2>Elije tu mascota:</h2>
-        <label for="hipodoge">Hipodoge</label>
-        <input type="radio" name="mascotas" id="hipodoge">
-        <label for="ratigueya">Ratigueya</label>
-        <input type="radio" name="mascotas" id="ratigueya">
-        <label for="capipepo">Capipepo</label>
-        <input type="radio" name="mascotas" id="capipepo">
-        <label for="langostelvis">Langostelvis</label>
-        <input type="radio" name="mascotas" id="langostelvis">
-        <label for="tucapalma">Tucapalma</label>
-        <input type="radio" name="mascotas" id="tucapalma">
-        <label for="pydos">Pydos</label>
-        <input type="radio" name="mascotas" id="pydos">
-
+        <div class="inputs">
+            <div class="grupo-uno">
+                <input type="radio" name="mascotas" id="hipodoge">
+                <label class="tarjeta-mokepon" for="hipodoge" >Hipodoge</label>
+                <input type="radio" name="mascotas" id="ratigueya">
+                <label class="tarjeta-mokepon" for="ratigueya">Ratigueya</label>
+                <input type="radio" name="mascotas" id="capipepo">
+                <label class="tarjeta-mokepon" for="capipepo">Capipepo</label>
+            </div>
+            <div class="grupo-dos">
+                <label class="tarjeta-mokepon" for="langostelvis">Langostelvis</label>
+                <input type="radio" name="mascotas" id="langostelvis">
+                <label class="tarjeta-mokepon" for="tucapalma">Tucapalma</label>
+                <input type="radio" name="mascotas" id="tucapalma">
+                <label class="tarjeta-mokepon" for="pydos">Pydos</label>
+                <input type="radio" name="mascotas" id="pydos">
+            </div>
+        </div>
         <button id="btn-mascota">Seleccionar</button>
     </section>
     <section id="seleccionar-ataque">
+  <!--       <h1>MOKEPON 🔥💦🌱 </h1> -->
         <h2>Elije tu ataque:</h2>
         <p>Tu mascota <strong><span id="mascota-jugador"></span></strong> tiene <strong><span id="vidas-jugador">3</span></strong> vidas</p>
         <p>La mascota <strong><span id="mascota-enemigo"></span></strong> de tu enemigo tiene <strong><span id="vidas-enemigo">3</span></strong> vidas</p>
@@ -36,11 +44,12 @@
             <button id="btn-tierra">Tierra 🌱</button>
         </p>
     </section>
-    <section id="mensajes">
-        
-    </section>
     <section id="reiniciar">
         <button id="btn-reiniciar">Reiniciar</button>
     </section>
+    <section id="mensajes">
+        
+    </section>
+
 </body>
 </html>

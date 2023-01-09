@@ -60,32 +60,32 @@ function selecionarMascotaJugador(){
 
     if(inputHipodoge.checked){
         mascotaJugador.innerHTML = ' Hipodoge'
-        seccionSeleccionarAtaque.style.display = 'block'
+        seccionSeleccionarAtaque.style.display = 'flex'
         seccionSeleccionarMascota = document.getElementById('seleccionar-mascota')
         seccionSeleccionarMascota.style.display = 'none'
     } else if(inputCapipepo.checked){
         mascotaJugador.innerHTML = ' Capipepo'
-        seccionSeleccionarAtaque.style.display = 'block'
+        seccionSeleccionarAtaque.style.display = 'flex'
         seccionSeleccionarMascota = document.getElementById('seleccionar-mascota')
         seccionSeleccionarMascota.style.display = 'none'
     } else if(inputRatigueya.checked){
         mascotaJugador.innerHTML = ' Ratigueya'
-        seccionSeleccionarAtaque.style.display = 'block'
+        seccionSeleccionarAtaque.style.display = 'flex'
         seccionSeleccionarMascota = document.getElementById('seleccionar-mascota')
         seccionSeleccionarMascota.style.display = 'none'
     } else if(inputLangostelvis.checked){
         mascotaJugador.innerHTML = ' Langostelvis'
-        seccionSeleccionarAtaque.style.display = 'block'
+        seccionSeleccionarAtaque.style.display = 'flex'
         seccionSeleccionarMascota = document.getElementById('seleccionar-mascota')
         seccionSeleccionarMascota.style.display = 'none'
     } else if(inputTucapalma.checked){
         mascotaJugador.innerHTML = ' Tucapalma'
-        seccionSeleccionarAtaque.style.display = 'block'
+        seccionSeleccionarAtaque.style.display = 'flex'
         seccionSeleccionarMascota = document.getElementById('seleccionar-mascota')
         seccionSeleccionarMascota.style.display = 'none'
     } else if(inputPydos.checked){
         mascotaJugador.innerHTML = ' Pydos'
-        seccionSeleccionarAtaque.style.display = 'block'
+        seccionSeleccionarAtaque.style.display = 'flex'
         seccionSeleccionarMascota = document.getElementById('seleccionar-mascota')
         seccionSeleccionarMascota.style.display = 'none'
     } else {
@@ -170,14 +170,14 @@ function ataqueAleatorioEnemigo(){
 function crearMensaje(resultadoCombate){
     let parrafo = document.createElement('p')
     parrafo.innerHTML = 'Tu mascota ataco con ' + ataqueJugador + ', la mascota de tu enemigo ataco con ' + ataqueEnemigo + " " + resultadoCombate
-    seccionMensajes.appendChild(parrafo)
+    seccionMensajes.prepend(parrafo)
 }
 
 
 function crearMensajeFinal(resultado){
     let parrafo = document.createElement('p')
     parrafo.innerHTML = resultado
-    seccionMensajes.appendChild(parrafo)
+    seccionMensajes.prepend(parrafo)
 }
 
 function verificarVidas(){
@@ -232,7 +232,7 @@ function combate(){
 
 function mostrarReiniciar(){
     if(vidasEnemigo == 0 || vidasJugador == 0){
-        seccionReiniciar.style.display = 'block'
+        seccionReiniciar.style.display = 'flex'
     }
 }
 
