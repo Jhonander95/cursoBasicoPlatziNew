@@ -121,7 +121,7 @@ function selecionarMascotaEnemigo (){
 }
 
 function verificarMascota() {
-    if((inputHipodoge.checked)||(inputCapipepo.checked)||(inputLangostelvis.checked)||(inputPydos.checked)||(inputRatigueya.checked)||(inputTucapalma.checked)){
+    if((inputHipodoge.checked)||(inputCapipepo.checked)||(inputRatigueya.checked)){
         return true
     }else {
         return false

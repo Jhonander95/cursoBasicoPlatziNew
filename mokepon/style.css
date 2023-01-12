@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
+
 body {
     margin: 0;
     padding: 0;
@@ -6,22 +8,18 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
+    font-family: 'Slackey', cursive;
+}
+
+body button {
+    font-family: 'Slackey', cursive;
 }
 
 h1{ 
     padding: 10px;
     border: 2px solid black;
-    background-color: #308b07;
+    background-color: #379237;
     margin-top: 150px;
-}
-
-#eleccionar-mascota{
-    margin-top: 150px;
-}
-#seleccionar-mascota h2{
-    padding: 10px;
-    border: 2px solid black;
-    background-color: #308b07;
 }
 
 #seleccionar-mascota, #seleccionar-ataque, #mensajes, #reiniciar {
@@ -29,28 +27,53 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: vh100;
 }
+
+/* #seleccionar-mascota{
+    margin-top: 150px;
+} */
+#seleccionar-mascota h2{
+    padding: 10px;
+    border: 2px solid black;
+    background-color: #54B435;
+}
+
+
 #seleccionar-mascota .inputs {
-    display: grid;
-    grid-template-columns: 1fr, 1fr;
+/*     display: grid;
+    grid-template-columns: 1fr, 1fr; */
+    display: flex;
+    gap: 10px;
     background-color: rgba(117, 211, 117, .5);
     border: 1px solid black;
     margin-bottom: 10px;
+    padding: 30px;
+    border-radius: 10px;
 }
 
-#seleccionar-mascota .inputs .grupo-uno, .grupo-dos {
+/* #seleccionar-mascota .inputs .grupo-uno {
     margin: 30px;
-}
+} */
 
 #seleccionar-mascota .inputs label{
-    width: 150px;
-    height: 50px;
-    margin: 10px;
-    padding: 10px;
     border: 2px solid black;
-    background-color: #308b07;
+    background-color: #379237;
+    width: 220px;
+    height: 120px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
+.inputs img {
+    width: 80px;
+  }
+.inputs img:hover {
+    width: 120px;
+} 
 
 #seleccionar-mascota .inputs label:hover{
     background-color: #52f108;
@@ -67,7 +90,7 @@ h1{
     margin: 10px;
     padding: 10px;
     border: 2px solid black;
-    background-color: #308b07;
+    background-color: #54B435;
 }
 #btn-mascota:hover{
     padding: 12px;
@@ -87,7 +110,7 @@ h1{
     margin: 10px;
     padding: 10px;
     border: 2px solid black;
-    background-color: #308b07;
+    background-color: #54B435;
 }
 #btn-tierra:hover{
     padding: 12px;
@@ -106,7 +129,7 @@ h1{
     margin: 10px;
     padding: 10px;
     border: 2px solid black;
-    background-color: #308b07;
+    background-color: #54B435;
 }
 #btn-reiniciar:hover{
     margin: 10px;
